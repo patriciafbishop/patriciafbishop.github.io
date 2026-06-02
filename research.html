@@ -1,30 +1,188 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Research | Patricia Bishop</title>
+  <title>Patricia Bishop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    :root {
+      --olive: #A1814D;
+      --paper: #D9C8AB;
+      --clay: #9E5C3E;
+      --ink: #1f241c;
+      --cream: #fbf7ef;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+     font-family: Georgia, "Times New Roman", serif;
+    }
+
+    main {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .image-panel {
+      min-height: 100vh;
+      background-image: url("riverimage1.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .content-panel {
+      min-height: 100vh;
+      padding: 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-left: 1px solid var(--paper);
+    }
+
+    .small-label {
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 12px;
+      color: var(--clay);
+      margin-bottom: 36px;
+    }
+
+    h1 {
+        font-size: clamp(54px, 7vw, 92px);
+  line-height: 0.9;
+  font-weight: normal;
+  margin: 0 0 28px;
+    }
+
+    .subtitle {
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      font-size: 13px;
+      color: var(--olive);
+      margin-bottom: 28px;
+    }
+
+    .statement {
+      max-width: 570px;
+      font-size: 21px;
+      line-height: 1.65;
+      margin-bottom: 42px;
+    }
+
+ .links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  max-width: 520px;
+}
+
+.links a {
+  text-decoration: none;
+  color: var(--ink);
+  border: 1px solid var(--paper);
+  padding: 18px;
+  background: #fffdf8;
+  transition: all 0.2s ease;
+}
+
+.links a:hover {
+  border-color: var(--clay);
+  transform: translateY(-3px);
+}
+
+  .link-title {
+  font-family: Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 12px;
+  color: var(--clay);
+  text-align: center;
+    }
+
+    .link-desc {
+      font-size: 15px;
+      line-height: 1.4;
+    }
+
+    footer {
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 11px;
+      color: #7a6b5a;
+      margin-top: 48px;
+    }
+
+    @media (max-width: 850px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+
+      .image-panel {
+        min-height: 45vh;
+      }
+
+      .content-panel {
+        min-height: auto;
+        padding: 34px;
+      }
+
+      .links {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <main>
 
-<h1>Research</h1>
+    <section class="image-panel" aria-label="Fieldwork in freshwater habitat"></section>
 
-<h2>Juvenile Alosine Ecology</h2>
-<p>
-Research on juvenile alewife and American shad in the Kennebec River system,
-including diet analysis, stable isotopes, and habitat use.
-</p>
+    <section class="content-panel">
+      <div>
 
-<h2>Salt Marsh Restoration</h2>
-<p>
-Fieldwork and monitoring through Rachel Carson National Wildlife Refuge,
-including hydrology, habitat restoration, and wetland assessment.
-</p>
+        <h1>Patricia<br>Bishop</h1>
 
-<h2>Climate Change & Coral Disease</h2>
-<p>
-Literature review research examining links between extreme weather,
-warming oceans, and coral disease in Florida reef ecosystems.
-</p>
+        <div class="subtitle">
+          Ecology Researcher | Environmental Planner
+        </div>
 
+        <p class="statement">
+          My path into ecology began through art. Before I ever stepped into a field research role, I spent years drawing, photographing, and paying attention to the world around me. I was fascinated by small details, patterns, and the character of different landscapes. That habit of observation eventually led me toward ecology, where I became interested in understanding how species, habitats, and ecological communities change over time, and how those changes can inform restoration and conservation efforts.
+
+        </p>
+
+        <div class="links">
+  <a href="./Patricia_Bishop_CV.pdf">
+    <div class="link-title">CV</div>
+  </a>
+
+  <a href="https://www.linkedin.com/in/patriciafbishop/" target="_blank">
+    <div class="link-title">LinkedIn</div>
+  </a>
+
+  <a href="mailto:patricia.bishop@maine.edu">
+    <div class="link-title">Contact</div>
+  </a>
+
+</div>
+      </div>
+
+      <footer>
+        Portland, Maine · wetlands · rivers · restoration
+      </footer>
+    </section>
+
+  </main>
 </body>
 </html>

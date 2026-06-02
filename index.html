@@ -9,387 +9,260 @@
       --grass: #A1814D;
       --paper: #D9C8AB;
       --clay: #9E5C3E;
-      --ink: #202219;
-      --cream: #f6f0e4;
-      --mist: #e7dfcf;
-    }
-
-    * {
-      box-sizing: border-box;
+      --ink: #1f241c;
+      --cream: #f8f3ea;
     }
 
     body {
       margin: 0;
-      background:
-        radial-gradient(circle at 15% 20%, rgba(255,255,255,.55), transparent 28%),
-        radial-gradient(circle at 85% 75%, rgba(158,92,62,.18), transparent 30%),
-        linear-gradient(135deg, var(--paper), #efe6d5);
+      background: var(--cream);
       color: var(--ink);
       font-family: Georgia, "Times New Roman", serif;
-      min-height: 100vh;
     }
 
-    .grain {
-      min-height: 100vh;
-      padding: 38px;
-      background-image:
-        linear-gradient(rgba(32,34,25,.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(32,34,25,.025) 1px, transparent 1px);
-      background-size: 38px 38px;
-    }
-
-    .sheet {
-      position: relative;
-      max-width: 1220px;
-      min-height: 760px;
+    header {
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 56px;
-      background: rgba(246,240,228,.72);
-      border: 1px solid rgba(32,34,25,.18);
-      box-shadow: 0 28px 80px rgba(0,0,0,.16);
-      overflow: hidden;
+      padding: 28px 28px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--paper);
     }
 
-    .sheet::before {
-      content: "";
-      position: absolute;
-      inset: 20px;
-      border: 1px solid rgba(32,34,25,.18);
-      pointer-events: none;
+    .site-name {
+      font-size: 20px;
+      letter-spacing: .04em;
     }
 
-    .catalog {
-      position: absolute;
-      top: 34px;
-      right: 48px;
-      font-family: Arial, sans-serif;
-      font-size: 11px;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      color: rgba(32,34,25,.55);
-      z-index: 5;
+    nav a {
+      margin-left: 22px;
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 15px;
     }
 
-    .main-photo {
-      position: absolute;
-      right: 70px;
-      top: 92px;
-      width: 48%;
-      height: 420px;
-      object-fit: cover;
-      border: 16px solid #f8f3ea;
-      box-shadow: 0 20px 45px rgba(0,0,0,.22);
-      filter: contrast(.94) saturate(.88);
-    }
-
-    .specimen-photo {
-      position: absolute;
-      right: 110px;
-      bottom: 58px;
-      width: 330px;
-      height: 230px;
-      object-fit: cover;
-      border: 12px solid #f8f3ea;
-      transform: rotate(-4deg);
-      box-shadow: 0 18px 38px rgba(0,0,0,.18);
-      filter: contrast(.96) saturate(.82);
-      z-index: 3;
-    }
-
-    .text-block {
-      position: relative;
-      z-index: 4;
-      max-width: 525px;
-      padding-top: 24px;
-    }
-
-    .kicker {
-      font-family: Arial, sans-serif;
-      font-size: 12px;
-      letter-spacing: .24em;
-      text-transform: uppercase;
+    nav a:hover {
       color: var(--clay);
-      margin-bottom: 18px;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 56px 28px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr .8fr;
+      gap: 54px;
+      align-items: center;
     }
 
     h1 {
+      font-size: clamp(54px, 8vw, 92px);
+      line-height: .95;
       font-weight: normal;
-      font-size: clamp(58px, 9vw, 118px);
-      line-height: .82;
-      margin: 0;
-      color: var(--ink);
+      margin: 0 0 20px;
     }
 
-    .role {
-      margin-top: 24px;
+    .subtitle {
       font-family: Arial, sans-serif;
-      letter-spacing: .12em;
       text-transform: uppercase;
+      letter-spacing: .12em;
       font-size: 13px;
-      color: var(--grass);
+      color: var(--clay);
+      margin-bottom: 28px;
     }
 
-    .statement {
-      max-width: 470px;
+    p {
+      font-size: 19px;
+      line-height: 1.7;
+      max-width: 650px;
+    }
+
+    .hero img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      border-radius: 2px;
+      box-shadow: 18px 18px 0 var(--paper);
+    }
+
+    .links {
       margin-top: 34px;
-      font-size: 22px;
-      line-height: 1.55;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .links a {
+      border: 1px solid var(--ink);
+      padding: 12px 18px;
+      color: var(--ink);
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      background: transparent;
+    }
+
+    .links a:hover {
+      background: var(--paper);
+    }
+
+    section {
+      margin-top: 80px;
+      border-top: 1px solid var(--paper);
+      padding-top: 38px;
+    }
+
+    h2 {
+      font-size: 34px;
+      font-weight: normal;
+      margin-top: 0;
     }
 
     .cards {
-      position: relative;
-      z-index: 6;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      max-width: 500px;
-      margin-top: 40px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 28px;
     }
 
     .card {
-      position: relative;
-      min-height: 104px;
-      padding: 18px;
-      background: rgba(248,243,234,.72);
-      border: 1px solid rgba(32,34,25,.48);
-      text-decoration: none;
-      color: var(--ink);
-      transition: all .2s ease;
+      border: 1px solid var(--paper);
+      padding: 24px;
+      background: #fffaf2;
+      min-height: 160px;
     }
 
-    .card:nth-child(2) {
-      transform: translateY(18px);
-    }
-
-    .card:nth-child(3) {
-      transform: translateX(24px);
-    }
-
-    .card:nth-child(4) {
-      transform: translate(18px, 20px);
-    }
-
-    .card:hover {
-      background: rgba(255,255,255,.9);
-      transform: translateY(-4px);
-    }
-
-    .card:nth-child(2):hover,
-    .card:nth-child(3):hover,
-    .card:nth-child(4):hover {
-      transform: translateY(-4px);
-    }
-
-    .card::before {
-      content: "";
-      position: absolute;
-      top: 12px;
-      left: 14px;
-      right: 14px;
-      height: 1px;
-      background: rgba(32,34,25,.35);
-    }
-
-    .card-title {
-      margin-top: 14px;
+    .card-label {
       font-family: Arial, sans-serif;
-      font-size: 12px;
-      font-weight: bold;
-      letter-spacing: .22em;
       text-transform: uppercase;
+      letter-spacing: .16em;
       color: var(--clay);
+      font-size: 12px;
+      margin-bottom: 18px;
     }
 
-    .card-desc {
-      margin-top: 10px;
+    .card p {
       font-size: 16px;
-      line-height: 1.35;
-    }
-
-    .annotation {
-      position: absolute;
-      left: 58%;
-      top: 545px;
-      max-width: 170px;
-      font-family: Arial, sans-serif;
-      font-size: 10px;
       line-height: 1.6;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: rgba(32,34,25,.55);
-      z-index: 5;
+      margin: 0;
     }
 
-    .line-a {
-      position: absolute;
-      width: 260px;
-      height: 1px;
-      left: 46%;
-      top: 510px;
-      background: rgba(32,34,25,.28);
-      transform: rotate(-18deg);
+    footer {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 28px;
+      color: #6f675b;
+      font-size: 14px;
+      border-top: 1px solid var(--paper);
     }
 
-    .line-b {
-      position: absolute;
-      width: 230px;
-      height: 1px;
-      right: 310px;
-      bottom: 260px;
-      background: rgba(32,34,25,.24);
-      transform: rotate(22deg);
-      z-index: 2;
-    }
-
-    .circle-one {
-      position: absolute;
-      width: 260px;
-      height: 260px;
-      border: 1px solid rgba(32,34,25,.12);
-      border-radius: 50%;
-      right: -70px;
-      top: 300px;
-    }
-
-    .circle-two {
-      position: absolute;
-      width: 145px;
-      height: 145px;
-      border: 1px solid rgba(158,92,62,.2);
-      border-radius: 50%;
-      left: 44%;
-      bottom: 74px;
-    }
-
-    .bottom-note {
-      position: absolute;
-      left: 56px;
-      bottom: 42px;
-      font-family: Arial, sans-serif;
-      font-size: 10px;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      color: rgba(32,34,25,.58);
-    }
-
-    .number {
-      position: absolute;
-      right: 52px;
-      bottom: 38px;
-      font-family: Arial, sans-serif;
-      font-size: 38px;
-      letter-spacing: .14em;
-      color: rgba(32,34,25,.22);
-    }
-
-    @media (max-width: 900px) {
-      .grain {
-        padding: 18px;
+    @media (max-width: 850px) {
+      header {
+        display: block;
       }
 
-      .sheet {
-        padding: 34px;
+      nav {
+        margin-top: 14px;
       }
 
-      .main-photo,
-      .specimen-photo,
-      .annotation,
-      .line-a,
-      .line-b,
-      .circle-one,
-      .circle-two,
-      .number {
-        position: static;
-        width: 100%;
-        height: auto;
-        transform: none;
-        margin-top: 28px;
+      nav a {
+        margin-left: 0;
+        margin-right: 16px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero img {
+        height: 360px;
       }
 
       .cards {
         grid-template-columns: 1fr;
-      }
-
-      .card,
-      .card:nth-child(2),
-      .card:nth-child(3),
-      .card:nth-child(4) {
-        transform: none;
-      }
-
-      .bottom-note {
-        position: static;
-        margin-top: 38px;
       }
     }
   </style>
 </head>
 
 <body>
-  <div class="grain">
-    <main class="sheet">
 
-      <div class="catalog">specimen index / coastal ecology / field notes</div>
+  <header>
+    <div class="site-name">Patricia Bishop</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="Patricia_Bishop_CV.pdf">CV</a>
+      <a href="mailto:patricia.bishop@maine.edu">Contact</a>
+    </nav>
+  </header>
 
-      <img class="main-photo" src="riverimage1.jpg" alt="Fieldwork in freshwater habitat">
-      <img class="specimen-photo" src="rocksand.jpg" alt="Rocks, sand, and natural specimens arranged on a table">
-
-      <div class="line-a"></div>
-      <div class="line-b"></div>
-      <div class="circle-one"></div>
-      <div class="circle-two"></div>
-
-      <section class="text-block">
-        <div class="kicker">from the edge of land and water</div>
-
+  <main>
+    <div class="hero">
+      <div>
         <h1>Patricia<br>Bishop</h1>
 
-        <div class="role">
+        <div class="subtitle">
           Environmental Planning · Ecology Research · Fieldwork
         </div>
 
-        <p class="statement">
-          Environmental planning, ecology research, and fieldwork rooted in curiosity
-          about rivers, wetlands, coastal habitats, and the species that move through them.
+        <p>
+          I’m an environmental planning and policy graduate, ecology researcher, and artist
+          based in Portland, Maine. My work is rooted in curiosity about wetlands, rivers,
+          coastal habitats, and the species that move through them.
         </p>
 
-        <div class="cards">
-          <a class="card" href="Patricia_Bishop_CV.pdf">
-            <div class="card-title">CV</div>
-            <div class="card-desc">curriculum vitae / research experience</div>
-          </a>
-
-          <a class="card" href="https://www.linkedin.com/in/patriciafbishop">
-            <div class="card-title">LinkedIn</div>
-            <div class="card-desc">professional profile</div>
-          </a>
-
-          <a class="card" href="mailto:patricia.bishop@maine.edu">
-            <div class="card-title">Contact</div>
-            <div class="card-desc">patricia.bishop@maine.edu</div>
-          </a>
-
-          <a class="card" href="#">
-            <div class="card-title">Instagram</div>
-            <div class="card-desc">artwork / field observations</div>
-          </a>
+        <div class="links">
+          <a href="Patricia_Bishop_CV.pdf">CV</a>
+          <a href="https://www.linkedin.com/in/patriciafbishop">LinkedIn</a>
+          <a href="mailto:patricia.bishop@maine.edu">Email</a>
+          <a href="#">Instagram</a>
         </div>
-      </section>
-
-      <div class="annotation">
-        wetlands<br>
-        fisheries ecology<br>
-        habitat restoration<br>
-        conservation planning
       </div>
 
-      <div class="bottom-note">
-        Portland, Maine · fieldwork · restoration · aquatic systems
+      <img src="riverimage1.jpg" alt="Fieldwork in freshwater habitat">
+    </div>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        My interests sit at the intersection of restoration, aquatic ecology, field observation,
+        and environmental planning. I’m especially interested in coastal wetlands, fisheries ecology,
+        habitat monitoring, and conservation work that connects science with place.
+      </p>
+    </section>
+
+    <section id="research">
+      <h2>Research & Field Interests</h2>
+
+      <div class="cards">
+        <div class="card">
+          <div class="card-label">Aquatic Ecology</div>
+          <p>Juvenile alosine diet analysis, anadromous fish habitat, and biological sample processing.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-label">Restoration</div>
+          <p>Salt marsh restoration, coastal habitat monitoring, wildlife surveys, and refuge-based fieldwork.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-label">Planning</div>
+          <p>Environmental planning, conservation policy, climate adaptation, and community-scale resilience.</p>
+        </div>
       </div>
+    </section>
+  </main>
 
-      <div class="number">04</div>
+  <footer>
+    Portland, Maine · Wetlands · Fisheries Ecology · Habitat Restoration
+  </footer>
 
-    </main>
-  </div>
 </body>
 </html>

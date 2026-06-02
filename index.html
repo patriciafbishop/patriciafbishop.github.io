@@ -6,258 +6,349 @@
 
   <style>
     :root {
-      --brass: #A1814D;
+      --grass: #A1814D;
       --paper: #D9C8AB;
       --clay: #9E5C3E;
-      --ink: #1f241c;
-      --soft: #f3eadb;
+      --ink: #202219;
+      --cream: #f6f0e4;
+      --mist: #e7dfcf;
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
       margin: 0;
-      background: var(--paper);
+      background:
+        radial-gradient(circle at 15% 20%, rgba(255,255,255,.55), transparent 28%),
+        radial-gradient(circle at 85% 75%, rgba(158,92,62,.18), transparent 30%),
+        linear-gradient(135deg, var(--paper), #efe6d5);
       color: var(--ink);
       font-family: Georgia, "Times New Roman", serif;
-    }
-
-    .page {
       min-height: 100vh;
-      padding: 42px;
-      box-sizing: border-box;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
-    .cabinet {
-      width: 100%;
-      max-width: 1180px;
-      min-height: 720px;
+    .grain {
+      min-height: 100vh;
+      padding: 38px;
+      background-image:
+        linear-gradient(rgba(32,34,25,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(32,34,25,.025) 1px, transparent 1px);
+      background-size: 38px 38px;
+    }
+
+    .sheet {
       position: relative;
-      background:
-        linear-gradient(rgba(255,255,255,0.28), rgba(255,255,255,0.28)),
-        var(--soft);
-      border: 1px solid rgba(31,36,28,0.18);
-      box-shadow: 0 25px 70px rgba(0,0,0,0.18);
+      max-width: 1220px;
+      min-height: 760px;
+      margin: 0 auto;
+      padding: 56px;
+      background: rgba(246,240,228,.72);
+      border: 1px solid rgba(32,34,25,.18);
+      box-shadow: 0 28px 80px rgba(0,0,0,.16);
       overflow: hidden;
-      padding: 52px;
-      box-sizing: border-box;
     }
 
-    .cabinet::before {
+    .sheet::before {
       content: "";
       position: absolute;
-      inset: 18px;
-      border: 1px solid rgba(31,36,28,0.22);
+      inset: 20px;
+      border: 1px solid rgba(32,34,25,.18);
       pointer-events: none;
     }
 
-    .label {
+    .catalog {
+      position: absolute;
+      top: 34px;
+      right: 48px;
       font-family: Arial, sans-serif;
-      letter-spacing: 0.18em;
+      font-size: 11px;
+      letter-spacing: .22em;
       text-transform: uppercase;
+      color: rgba(32,34,25,.55);
+      z-index: 5;
+    }
+
+    .main-photo {
+      position: absolute;
+      right: 70px;
+      top: 92px;
+      width: 48%;
+      height: 420px;
+      object-fit: cover;
+      border: 16px solid #f8f3ea;
+      box-shadow: 0 20px 45px rgba(0,0,0,.22);
+      filter: contrast(.94) saturate(.88);
+    }
+
+    .specimen-photo {
+      position: absolute;
+      right: 110px;
+      bottom: 58px;
+      width: 330px;
+      height: 230px;
+      object-fit: cover;
+      border: 12px solid #f8f3ea;
+      transform: rotate(-4deg);
+      box-shadow: 0 18px 38px rgba(0,0,0,.18);
+      filter: contrast(.96) saturate(.82);
+      z-index: 3;
+    }
+
+    .text-block {
+      position: relative;
+      z-index: 4;
+      max-width: 525px;
+      padding-top: 24px;
+    }
+
+    .kicker {
+      font-family: Arial, sans-serif;
       font-size: 12px;
+      letter-spacing: .24em;
+      text-transform: uppercase;
       color: var(--clay);
+      margin-bottom: 18px;
     }
 
     h1 {
-      margin: 12px 0 8px;
-      font-size: clamp(50px, 8vw, 104px);
-      line-height: 0.88;
-      color: var(--ink);
       font-weight: normal;
+      font-size: clamp(58px, 9vw, 118px);
+      line-height: .82;
+      margin: 0;
+      color: var(--ink);
     }
 
-    .tagline {
-      max-width: 520px;
-      font-size: 21px;
+    .role {
+      margin-top: 24px;
+      font-family: Arial, sans-serif;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-size: 13px;
+      color: var(--grass);
+    }
+
+    .statement {
+      max-width: 470px;
+      margin-top: 34px;
+      font-size: 22px;
       line-height: 1.55;
-      margin: 24px 0 34px;
-    }
-
-    .hero-image {
-      position: absolute;
-      right: 52px;
-      top: 54px;
-      width: 45%;
-      height: 390px;
-      object-fit: cover;
-      border: 12px solid #f7f0e4;
-      box-shadow: 0 18px 38px rgba(0,0,0,0.2);
-      z-index: 1;
-    }
-
-    .specimen-image {
-      position: absolute;
-      right: 115px;
-      bottom: 52px;
-      width: 310px;
-      height: 220px;
-      object-fit: cover;
-      transform: rotate(-3deg);
-      border: 10px solid #f7f0e4;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.16);
-      z-index: 2;
-    }
-
-    .info {
-      position: relative;
-      z-index: 3;
-      max-width: 560px;
     }
 
     .cards {
+      position: relative;
+      z-index: 6;
       display: grid;
-      grid-template-columns: repeat(2, minmax(170px, 230px));
-      gap: 16px;
-      margin-top: 28px;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      max-width: 500px;
+      margin-top: 40px;
     }
 
     .card {
-      display: block;
-      background: rgba(255,255,255,0.42);
-      border: 1px solid rgba(31,36,28,0.5);
-      padding: 18px 18px 16px;
+      position: relative;
+      min-height: 104px;
+      padding: 18px;
+      background: rgba(248,243,234,.72);
+      border: 1px solid rgba(32,34,25,.48);
       text-decoration: none;
       color: var(--ink);
-      min-height: 92px;
-      transition: transform 0.2s ease, background 0.2s ease;
-      position: relative;
+      transition: all .2s ease;
+    }
+
+    .card:nth-child(2) {
+      transform: translateY(18px);
+    }
+
+    .card:nth-child(3) {
+      transform: translateX(24px);
+    }
+
+    .card:nth-child(4) {
+      transform: translate(18px, 20px);
     }
 
     .card:hover {
+      background: rgba(255,255,255,.9);
       transform: translateY(-4px);
-      background: rgba(255,255,255,0.7);
+    }
+
+    .card:nth-child(2):hover,
+    .card:nth-child(3):hover,
+    .card:nth-child(4):hover {
+      transform: translateY(-4px);
     }
 
     .card::before {
       content: "";
-      display: block;
+      position: absolute;
+      top: 12px;
+      left: 14px;
+      right: 14px;
       height: 1px;
-      background: rgba(31,36,28,0.45);
-      margin-bottom: 14px;
+      background: rgba(32,34,25,.35);
     }
 
     .card-title {
+      margin-top: 14px;
       font-family: Arial, sans-serif;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      font-size: 13px;
-      color: var(--clay);
-      margin-bottom: 8px;
+      font-size: 12px;
       font-weight: bold;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--clay);
     }
 
-    .card-text {
+    .card-desc {
+      margin-top: 10px;
       font-size: 16px;
       line-height: 1.35;
     }
 
-    .note {
+    .annotation {
       position: absolute;
-      left: 54px;
-      bottom: 42px;
+      left: 58%;
+      top: 545px;
+      max-width: 170px;
       font-family: Arial, sans-serif;
-      font-size: 11px;
-      letter-spacing: 0.16em;
+      font-size: 10px;
+      line-height: 1.6;
+      letter-spacing: .18em;
       text-transform: uppercase;
-      color: rgba(31,36,28,0.65);
+      color: rgba(32,34,25,.55);
+      z-index: 5;
     }
 
-    .line-one {
+    .line-a {
       position: absolute;
-      width: 230px;
+      width: 260px;
       height: 1px;
-      background: rgba(31,36,28,0.25);
-      top: 430px;
-      left: 500px;
+      left: 46%;
+      top: 510px;
+      background: rgba(32,34,25,.28);
       transform: rotate(-18deg);
     }
 
-    .line-two {
+    .line-b {
       position: absolute;
-      width: 180px;
+      width: 230px;
       height: 1px;
-      background: rgba(31,36,28,0.22);
-      bottom: 250px;
-      right: 335px;
+      right: 310px;
+      bottom: 260px;
+      background: rgba(32,34,25,.24);
       transform: rotate(22deg);
+      z-index: 2;
     }
 
-    .circle {
+    .circle-one {
       position: absolute;
-      width: 190px;
-      height: 190px;
-      border: 1px solid rgba(31,36,28,0.13);
+      width: 260px;
+      height: 260px;
+      border: 1px solid rgba(32,34,25,.12);
       border-radius: 50%;
-      right: 22px;
-      bottom: 180px;
+      right: -70px;
+      top: 300px;
     }
 
-    .tiny {
+    .circle-two {
       position: absolute;
-      right: 64px;
-      bottom: 302px;
+      width: 145px;
+      height: 145px;
+      border: 1px solid rgba(158,92,62,.2);
+      border-radius: 50%;
+      left: 44%;
+      bottom: 74px;
+    }
+
+    .bottom-note {
+      position: absolute;
+      left: 56px;
+      bottom: 42px;
       font-family: Arial, sans-serif;
       font-size: 10px;
-      letter-spacing: 0.18em;
+      letter-spacing: .22em;
       text-transform: uppercase;
-      color: rgba(31,36,28,0.6);
-      z-index: 4;
+      color: rgba(32,34,25,.58);
+    }
+
+    .number {
+      position: absolute;
+      right: 52px;
+      bottom: 38px;
+      font-family: Arial, sans-serif;
+      font-size: 38px;
+      letter-spacing: .14em;
+      color: rgba(32,34,25,.22);
     }
 
     @media (max-width: 900px) {
-      .page {
+      .grain {
         padding: 18px;
       }
 
-      .cabinet {
-        padding: 30px;
+      .sheet {
+        padding: 34px;
       }
 
-      .hero-image,
-      .specimen-image,
-      .line-one,
-      .line-two,
-      .circle,
-      .tiny {
+      .main-photo,
+      .specimen-photo,
+      .annotation,
+      .line-a,
+      .line-b,
+      .circle-one,
+      .circle-two,
+      .number {
         position: static;
         width: 100%;
         height: auto;
         transform: none;
-        margin-top: 24px;
+        margin-top: 28px;
       }
 
       .cards {
         grid-template-columns: 1fr;
       }
 
-      .note {
+      .card,
+      .card:nth-child(2),
+      .card:nth-child(3),
+      .card:nth-child(4) {
+        transform: none;
+      }
+
+      .bottom-note {
         position: static;
-        margin-top: 34px;
+        margin-top: 38px;
       }
     }
   </style>
 </head>
 
 <body>
-  <main class="page">
-    <section class="cabinet">
+  <div class="grain">
+    <main class="sheet">
 
-      <img class="hero-image" src="riverimage1.jpg" alt="Fieldwork in freshwater habitat">
-      <img class="specimen-image" src="rocksand.jpg" alt="Specimen collection of rocks, sand, and natural materials">
+      <div class="catalog">specimen index / coastal ecology / field notes</div>
 
-      <div class="line-one"></div>
-      <div class="line-two"></div>
-      <div class="circle"></div>
-      <div class="tiny">specimens / field notes / habitat</div>
+      <img class="main-photo" src="riverimage1.jpg" alt="Fieldwork in freshwater habitat">
+      <img class="specimen-photo" src="rocksand.jpg" alt="Rocks, sand, and natural specimens arranged on a table">
 
-      <div class="info">
-        <div class="label">field notes from the edge of land and water</div>
+      <div class="line-a"></div>
+      <div class="line-b"></div>
+      <div class="circle-one"></div>
+      <div class="circle-two"></div>
+
+      <section class="text-block">
+        <div class="kicker">from the edge of land and water</div>
 
         <h1>Patricia<br>Bishop</h1>
 
-        <p class="tagline">
+        <div class="role">
+          Environmental Planning · Ecology Research · Fieldwork
+        </div>
+
+        <p class="statement">
           Environmental planning, ecology research, and fieldwork rooted in curiosity
           about rivers, wetlands, coastal habitats, and the species that move through them.
         </p>
@@ -265,31 +356,40 @@
         <div class="cards">
           <a class="card" href="Patricia_Bishop_CV.pdf">
             <div class="card-title">CV</div>
-            <div class="card-text">Curriculum vitae & research experience</div>
+            <div class="card-desc">curriculum vitae / research experience</div>
           </a>
 
           <a class="card" href="https://www.linkedin.com/in/patriciafbishop">
             <div class="card-title">LinkedIn</div>
-            <div class="card-text">Professional profile</div>
+            <div class="card-desc">professional profile</div>
           </a>
 
           <a class="card" href="mailto:patricia.bishop@maine.edu">
             <div class="card-title">Contact</div>
-            <div class="card-text">patricia.bishop@maine.edu</div>
+            <div class="card-desc">patricia.bishop@maine.edu</div>
           </a>
 
           <a class="card" href="#">
             <div class="card-title">Instagram</div>
-            <div class="card-text">Artwork & field observations</div>
+            <div class="card-desc">artwork / field observations</div>
           </a>
         </div>
+      </section>
+
+      <div class="annotation">
+        wetlands<br>
+        fisheries ecology<br>
+        habitat restoration<br>
+        conservation planning
       </div>
 
-      <div class="note">
-        Portland, Maine · Wetlands · Fisheries Ecology · Habitat Restoration
+      <div class="bottom-note">
+        Portland, Maine · fieldwork · restoration · aquatic systems
       </div>
 
-    </section>
-  </main>
+      <div class="number">04</div>
+
+    </main>
+  </div>
 </body>
 </html>

@@ -78,33 +78,33 @@
       margin-bottom: 42px;
     }
 
-   .links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+ .links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
   max-width: 520px;
 }
 
 .links a {
   text-decoration: none;
   color: var(--ink);
-  border: 1px solid var(--ink);
-  padding: 12px 18px;
-  background: transparent;
+  border: 1px solid var(--paper);
+  padding: 18px;
+  background: #fffdf8;
   transition: all 0.2s ease;
 }
 
 .links a:hover {
-  background: var(--paper);
   border-color: var(--clay);
+  transform: translateY(-3px);
 }
 
   .link-title {
-  font-family: inherit;
-  text-transform: none;
-  letter-spacing: 0;
-  font-size: 16px;
-  color: var(--ink);
+  font-family: Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 12px;
+  color: var(--clay);
   text-align: center;
     }
 
@@ -161,7 +161,7 @@
           My path into ecology began through art. Long before I studied environmental planning,
           I was interested in observation: collecting details, documenting landscapes, and paying
           attention to the patterns that shape the natural world. Today that same curiosity guides
-          my work in aquatic ecology, habitat restoration, and field research throughout Maine.
+          my work in aquatic ecology, habitat restoration, and field research throughout southern Maine.
         </p>
 
         <div class="links">

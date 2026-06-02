@@ -2,134 +2,233 @@
 <html>
 <head>
   <title>Patricia Bishop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
       margin: 0;
-      font-family: Georgia, serif;
-      background: #f7f1e8;
-      color: #2f3a2f;
+      font-family: Georgia, "Times New Roman", serif;
+      background: #ebe4d6;
+      color: #263026;
     }
 
-    .container {
-      max-width: 850px;
-      margin: 60px auto;
-      padding: 40px;
-      background: #fffaf2;
-      border: 2px solid #d8c7aa;
-      border-radius: 24px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    .page {
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 40px 24px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 40px;
+      align-items: center;
+      min-height: 80vh;
+    }
+
+    .hero img {
+      width: 100%;
+      max-height: 540px;
+      object-fit: cover;
+      border-radius: 28px;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.22);
+    }
+
+    .intro {
+      background: #fff9ed;
+      padding: 42px;
+      border-radius: 28px;
+      border: 1px solid #cdbf9f;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.08);
     }
 
     h1 {
-      font-size: 48px;
-      margin-bottom: 5px;
-      color: #405c3b;
+      font-size: 54px;
+      line-height: 1;
+      margin: 0 0 14px;
+      color: #354d32;
     }
 
     .subtitle {
-      font-size: 20px;
-      color: #7a5c43;
-      margin-bottom: 30px;
+      font-size: 18px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #7a5738;
+      margin-bottom: 26px;
     }
 
-    h2 {
-      color: #405c3b;
-      border-bottom: 1px solid #d8c7aa;
-      padding-bottom: 6px;
-      margin-top: 35px;
+    p {
+      font-size: 18px;
+      line-height: 1.7;
     }
 
-    p, li {
-      font-size: 17px;
-      line-height: 1.6;
+    .button-row {
+      margin-top: 28px;
     }
 
-    a {
-      color: #7b4f2c;
+    .button {
+      display: inline-block;
+      margin: 8px 8px 0 0;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: #d8c7a4;
+      color: #263026;
       text-decoration: none;
       font-weight: bold;
     }
 
-    a:hover {
-      text-decoration: underline;
+    .button:hover {
+      background: #c8b489;
     }
 
-    .links a {
-      display: inline-block;
-      margin: 8px 10px 8px 0;
-      padding: 10px 16px;
-      background: #e4d7bd;
-      border-radius: 999px;
+    section {
+      background: #fff9ed;
+      margin-top: 28px;
+      padding: 34px;
+      border-radius: 24px;
+      border: 1px solid #cdbf9f;
     }
 
-    .footer {
-      margin-top: 40px;
+    h2 {
+      margin-top: 0;
+      color: #354d32;
+      font-size: 28px;
+    }
+
+    ul {
+      padding-left: 22px;
+    }
+
+    li {
+      font-size: 17px;
+      line-height: 1.7;
+      margin-bottom: 6px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .small-title {
+      font-weight: bold;
+      color: #7a5738;
+      margin-bottom: 6px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 0 10px;
+      color: #6f675b;
       font-size: 14px;
-      color: #7a6b5a;
+    }
 
-      .hero-image {
-  width: 100%;
-  max-width: 700px;
-  display: block;
-  margin: 0 auto 40px auto;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-}
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      h1 {
+        font-size: 42px;
+      }
+
+      .intro {
+        padding: 28px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 
 <body>
-<img src="riverimage1.jpg" class="hero-image">
+  <div class="page">
 
-<h1>Patricia Bishop</h1>
-<div class="subtitle">Environmental Planning · Ecology Research · Fieldwork</div>
+    <div class="hero">
+      <img src="riverimage1.jpg" alt="Fieldwork in freshwater habitat">
 
-<p>
-  I’m a recent graduate of environmental planning and policy, ecology researcher, and artist
-  based in Portland, Maine. My work is rooted in curiosity about wetlands, rivers,
-  coastal habitats, and the species that move through them. I’m especially interested
-  in restoration, fisheries ecology, habitat monitoring, and the ways science can be
-  communicated through both research and visual storytelling.
-</p>
+      <div class="intro">
+        <h1>Patricia Bishop</h1>
+        <div class="subtitle">Environmental Planning · Ecology Research · Fieldwork</div>
 
-    <h2>Research Interests</h2>
-    <ul>
-      <li>Wetland ecology and coastal restoration</li>
-      <li>Fisheries ecology and anadromous fish habitat</li>
-      <li>Wildlife monitoring and habitat management</li>
-      <li>Climate adaptation and conservation planning</li>
-      <li>Science communication and visual storytelling</li>
-    </ul>
+        <p>
+          I’m a recent graduate of environmental planning and policy, ecology researcher, and artist
+          based in Portland, Maine. My work is rooted in curiosity about wetlands, rivers,
+          coastal habitats, and the species that move through them. I’m especially interested
+          in restoration, fisheries ecology, habitat monitoring, and the ways science can be
+          communicated through both research and visual storytelling.
+        </p>
 
-    <h2>Research & Field Experience</h2>
-    <p>
-      My recent work includes juvenile alosine diet analysis in the Kennebec River system,
-      biological sample processing in the USM Aquatic Systems Lab, and salt marsh restoration
-      support at Rachel Carson National Wildlife Refuge.
-    </p>
-
-    <h2>Presentations</h2>
-    <ul>
-      <li>
-        Diet Analysis of Juvenile Alewife and American Shad in Merrymeeting Bay —
-        Thinking Matters Symposium, 2025
-      </li>
-      <li>
-        Juvenile Alosine Ecology in the Kennebec River — Maine Soil and Water Conference, 2025
-      </li>
-    </ul>
-
-    <h2>Links</h2>
-    <div class="links">
-      <a href="https://www.linkedin.com/in/patriciafbishop">LinkedIn</a>
-      <a href="mailto:patricia.bishop@maine.edu">Email</a>
-      <a href="#">CV coming soon</a>
-      <a href="#">Artwork coming soon</a>
+        <div class="button-row">
+          <a class="button" href="mailto:patricia.bishop@maine.edu">Email</a>
+          <a class="button" href="https://www.linkedin.com/in/patriciafbishop">LinkedIn</a>
+          <a class="button" href="#">CV coming soon</a>
+        </div>
+      </div>
     </div>
 
-    <div class="footer">
+    <section>
+      <h2>Research Interests</h2>
+      <div class="grid">
+        <div>
+          <div class="small-title">Aquatic & Coastal Ecology</div>
+          <p>
+            I’m interested in wetland systems, anadromous fishes, coastal habitats,
+            and the ecological relationships that shape restoration work.
+          </p>
+        </div>
+
+        <div>
+          <div class="small-title">Restoration & Habitat Monitoring</div>
+          <p>
+            My field experience includes salt marsh restoration support, wildlife monitoring,
+            habitat documentation, and ecological data collection.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Research & Field Experience</h2>
+      <ul>
+        <li>Conducted stomach content analysis of juvenile alewife and American shad.</li>
+        <li>Processed biological specimens for aquatic ecology research.</li>
+        <li>Supported salt marsh restoration monitoring at Rachel Carson National Wildlife Refuge.</li>
+        <li>Conducted wildlife surveys and contributed to habitat management work.</li>
+        <li>Used GIS for mapping, documentation, and ecological monitoring support.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Presentations</h2>
+      <ul>
+        <li>
+          <strong>Diet Analysis of Juvenile Alewife and American Shad in Merrymeeting Bay</strong>,
+          Thinking Matters Symposium, 2025.
+        </li>
+        <li>
+          <strong>Juvenile Alosine Ecology in the Kennebec River</strong>,
+          Maine Soil and Water Conference, 2025.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>About</h2>
+      <p>
+        Before entering environmental planning and ecology, I earned a BFA in Studio Art.
+        That background still shapes how I approach fieldwork and research: through observation,
+        patience, attention to material detail, and a strong sense of place.
+      </p>
+    </section>
+
+    <footer>
       Portland, Maine · Built with GitHub Pages
-    </div>
+    </footer>
 
   </div>
 </body>

@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <title>Patricia Bishop</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -24,7 +21,7 @@
       margin: 0;
       background: var(--cream);
       color: var(--ink);
-      font-family: 'Inter', sans-serif;
+     font-family: Georgia, "Times New Roman", serif;
     }
 
     main {
@@ -81,26 +78,26 @@
       margin-bottom: 42px;
     }
 
-    .links {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      max-width: 520px;
-    }
+   .links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 520px;
+}
 
-    .links a {
-      text-decoration: none;
-      color: var(--ink);
-      border: 1px solid var(--paper);
-      padding: 18px;
-      background: #fffdf8;
-      transition: all 0.2s ease;
-    }
+.links a {
+  text-decoration: none;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  padding: 12px 18px;
+  background: transparent;
+  transition: all 0.2s ease;
+}
 
-    .links a:hover {
-      border-color: var(--clay);
-      transform: translateY(-3px);
-    }
+.links a:hover {
+  background: var(--paper);
+  border-color: var(--clay);
+}
 
     .link-title {
       font-family: Arial, sans-serif;

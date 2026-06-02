@@ -6,11 +6,15 @@
 
   <style>
     :root {
-      --grass: #A1814D;
+      --olive: #A1814D;
       --paper: #D9C8AB;
       --clay: #9E5C3E;
       --ink: #1f241c;
-      --cream: #f8f3ea;
+      --cream: #fbf7ef;
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
@@ -20,171 +24,119 @@
       font-family: Georgia, "Times New Roman", serif;
     }
 
-    header {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 28px 28px 10px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid var(--paper);
-    }
-
-    .site-name {
-      font-size: 20px;
-      letter-spacing: .04em;
-    }
-
-    nav a {
-      margin-left: 22px;
-      color: var(--ink);
-      text-decoration: none;
-      font-size: 15px;
-    }
-
-    nav a:hover {
-      color: var(--clay);
-    }
-
     main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 56px 28px;
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
     }
 
-    .hero {
-      display: grid;
-      grid-template-columns: 1fr .8fr;
-      gap: 54px;
-      align-items: center;
+    .image-panel {
+      min-height: 100vh;
+      background-image: url("riverimage1.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .content-panel {
+      min-height: 100vh;
+      padding: 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-left: 1px solid var(--paper);
+    }
+
+    .small-label {
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 12px;
+      color: var(--clay);
+      margin-bottom: 36px;
     }
 
     h1 {
-      font-size: clamp(54px, 8vw, 92px);
-      line-height: .95;
+      font-size: clamp(60px, 8vw, 104px);
+      line-height: 0.9;
       font-weight: normal;
-      margin: 0 0 20px;
+      margin: 0 0 28px;
     }
 
     .subtitle {
       font-family: Arial, sans-serif;
       text-transform: uppercase;
-      letter-spacing: .12em;
+      letter-spacing: 0.13em;
       font-size: 13px;
-      color: var(--clay);
-      margin-bottom: 28px;
+      color: var(--olive);
+      margin-bottom: 36px;
     }
 
-    p {
-      font-size: 19px;
-      line-height: 1.7;
-      max-width: 650px;
-    }
-
-    .hero img {
-      width: 100%;
-      height: 520px;
-      object-fit: cover;
-      border-radius: 2px;
-      box-shadow: 18px 18px 0 var(--paper);
+    .statement {
+      max-width: 570px;
+      font-size: 21px;
+      line-height: 1.65;
+      margin-bottom: 42px;
     }
 
     .links {
-      margin-top: 34px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      max-width: 520px;
     }
 
     .links a {
-      border: 1px solid var(--ink);
-      padding: 12px 18px;
-      color: var(--ink);
       text-decoration: none;
-      font-family: Arial, sans-serif;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: .12em;
-      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--paper);
+      padding: 18px;
+      background: #fffdf8;
+      transition: all 0.2s ease;
     }
 
     .links a:hover {
-      background: var(--paper);
+      border-color: var(--clay);
+      transform: translateY(-3px);
     }
 
-    section {
-      margin-top: 80px;
-      border-top: 1px solid var(--paper);
-      padding-top: 38px;
-    }
-
-    h2 {
-      font-size: 34px;
-      font-weight: normal;
-      margin-top: 0;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-      margin-top: 28px;
-    }
-
-    .card {
-      border: 1px solid var(--paper);
-      padding: 24px;
-      background: #fffaf2;
-      min-height: 160px;
-    }
-
-    .card-label {
+    .link-title {
       font-family: Arial, sans-serif;
       text-transform: uppercase;
-      letter-spacing: .16em;
-      color: var(--clay);
+      letter-spacing: 0.16em;
       font-size: 12px;
-      margin-bottom: 18px;
+      color: var(--clay);
+      margin-bottom: 10px;
     }
 
-    .card p {
-      font-size: 16px;
-      line-height: 1.6;
-      margin: 0;
+    .link-desc {
+      font-size: 15px;
+      line-height: 1.4;
     }
 
     footer {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 40px 28px;
-      color: #6f675b;
-      font-size: 14px;
-      border-top: 1px solid var(--paper);
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 11px;
+      color: #7a6b5a;
+      margin-top: 48px;
     }
 
     @media (max-width: 850px) {
-      header {
-        display: block;
-      }
-
-      nav {
-        margin-top: 14px;
-      }
-
-      nav a {
-        margin-left: 0;
-        margin-right: 16px;
-      }
-
-      .hero {
+      main {
         grid-template-columns: 1fr;
       }
 
-      .hero img {
-        height: 360px;
+      .image-panel {
+        min-height: 45vh;
       }
 
-      .cards {
+      .content-panel {
+        min-height: auto;
+        padding: 34px;
+      }
+
+      .links {
         grid-template-columns: 1fr;
       }
     }
@@ -192,77 +144,55 @@
 </head>
 
 <body>
-
-  <header>
-    <div class="site-name">Patricia Bishop</div>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#research">Research</a>
-      <a href="Patricia_Bishop_CV.pdf">CV</a>
-      <a href="mailto:patricia.bishop@maine.edu">Contact</a>
-    </nav>
-  </header>
-
   <main>
-    <div class="hero">
+
+    <section class="image-panel" aria-label="Fieldwork in freshwater habitat"></section>
+
+    <section class="content-panel">
       <div>
+        <div class="small-label">Portfolio / Field Notes / Ecology</div>
+
         <h1>Patricia<br>Bishop</h1>
 
         <div class="subtitle">
-          Environmental Planning · Ecology Research · Fieldwork
+          Environmental Planning & Policy · Ecology Research · Fieldwork
         </div>
 
-        <p>
-          I’m an environmental planning and policy graduate, ecology researcher, and artist
-          based in Portland, Maine. My work is rooted in curiosity about wetlands, rivers,
-          coastal habitats, and the species that move through them.
+        <p class="statement">
+          My path into ecology began through art. Long before I studied environmental planning,
+          I was interested in observation: collecting details, documenting landscapes, and paying
+          attention to the patterns that shape the natural world. Today that same curiosity guides
+          my work in aquatic ecology, habitat restoration, and field research throughout Maine.
         </p>
 
         <div class="links">
-          <a href="Patricia_Bishop_CV.pdf">CV</a>
-          <a href="https://www.linkedin.com/in/patriciafbishop">LinkedIn</a>
-          <a href="mailto:patricia.bishop@maine.edu">Email</a>
-          <a href="#">Instagram</a>
+          <a href="Patricia_Bishop_CV.pdf">
+            <div class="link-title">CV</div>
+            <div class="link-desc">Curriculum vitae and research experience</div>
+          </a>
+
+          <a href="https://www.linkedin.com/in/patriciafbishop">
+            <div class="link-title">LinkedIn</div>
+            <div class="link-desc">Professional profile</div>
+          </a>
+
+          <a href="mailto:patricia.bishop@maine.edu">
+            <div class="link-title">Contact</div>
+            <div class="link-desc">patricia.bishop@maine.edu</div>
+          </a>
+
+          <a href="#">
+            <div class="link-title">Instagram</div>
+            <div class="link-desc">Artwork and field observations</div>
+          </a>
         </div>
       </div>
 
-      <img src="riverimage1.jpg" alt="Fieldwork in freshwater habitat">
-    </div>
-
-    <section id="about">
-      <h2>About</h2>
-      <p>
-        My interests sit at the intersection of restoration, aquatic ecology, field observation,
-        and environmental planning. I’m especially interested in coastal wetlands, fisheries ecology,
-        habitat monitoring, and conservation work that connects science with place.
-      </p>
+      <footer>
+        Portland, Maine · wetlands · rivers · restoration
+      </footer>
     </section>
 
-    <section id="research">
-      <h2>Research & Field Interests</h2>
-
-      <div class="cards">
-        <div class="card">
-          <div class="card-label">Aquatic Ecology</div>
-          <p>Juvenile alosine diet analysis, anadromous fish habitat, and biological sample processing.</p>
-        </div>
-
-        <div class="card">
-          <div class="card-label">Restoration</div>
-          <p>Salt marsh restoration, coastal habitat monitoring, wildlife surveys, and refuge-based fieldwork.</p>
-        </div>
-
-        <div class="card">
-          <div class="card-label">Planning</div>
-          <p>Environmental planning, conservation policy, climate adaptation, and community-scale resilience.</p>
-        </div>
-      </div>
-    </section>
   </main>
-
-  <footer>
-    Portland, Maine · Wetlands · Fisheries Ecology · Habitat Restoration
-  </footer>
-
 </body>
 </html>

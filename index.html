@@ -118,50 +118,28 @@
     }
 
     @media (max-width: 850px) {
-  .home {
-    align-items: center;
-    text-align: center;
-  }
+      .content {
+        padding: 34px;
+      }
 
-  .content {
-    padding: 34px;
-  }
+      h1 {
+        font-size: clamp(52px, 16vw, 82px);
+      }
 
-  .label {
-    font-size: 10px;
-    margin-bottom: 20px;
-  }
+      p {
+        font-size: 18px;
+      }
 
-  h1 {
-    font-size: clamp(48px, 14vw, 72px);
-    margin-bottom: 22px;
-  }
+      .links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
 
-  .subtitle {
-    font-size: 10px;
-    margin-bottom: 28px;
-  }
-
-  p {
-    font-size: 17px;
-    line-height: 1.55;
-    max-width: 100%;
-  }
-
-  .links {
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-  }
-
-  .links a {
-    padding: 12px 14px;
-    font-size: 10px;
-  }
-
-  .footer-note {
-    display: none;
-  }
-}
+      .footer-note {
+        position: static;
+        padding: 0 34px 34px;
+      }
+    }
   </style>
 </head>
 
@@ -179,7 +157,7 @@
       </div>
 
       <p>
-        I am an environmental researcher, planner, and artist interested in the relationships between species, habitats, and place. Through research, restoration, and observation, I explore how ecological communities change across landscapes and through time.
+        I am an environmental researcher and artist interested in habitat restoration, landscape ecology, and the relationships between people and place. My work is rooted in careful observation—whether through field research, ecological monitoring, or drawing
       </p>
 
       <div class="links">

@@ -152,8 +152,33 @@ figcaption {
   color: rgba(31,36,28,.65);
   font-family: Arial, sans-serif;
 }
-    @media (max-width: 850px) {
+    .page-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+  padding-top: 20px;
+}
 
+.page-nav a {
+  color: var(--clay);
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-size: 11px;
+}
+
+.page-nav a:hover {
+  text-decoration: underline;
+}
+    
+    @media (max-width: 850px) {
+.page-nav {
+  flex-direction: column;
+  gap: 18px;
+  align-items: flex-start;
+}
   .content {
     padding: 60px 34px 70px;
   }
@@ -261,6 +286,10 @@ figcaption {
     Presenting research findings at the University of Southern Maine Thinking Matters Symposium, April 2025.
   </figcaption>
 </figure>
+    <div class="page-nav">
+  <a href="work.html">← Work</a>
+
+  <a href="salt-marsh.html">Salt Marsh Restoration →</a>
 
 </div>
 
